@@ -14,7 +14,6 @@
               sm="6"
               md="4">
               <pre>{{ packageInfo }}</pre>
-<!--              <p v-for="(tag, i) in package" :key="i">{{ tag }}</p>-->
             </v-col>
           </v-row>
         </v-container>
