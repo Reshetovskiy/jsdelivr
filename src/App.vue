@@ -1,32 +1,36 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <v-spacer></v-spacer>
+      <div class="d-flex align-center">
+        <base-header />
+      </div>
+    </v-app-bar>
+
+    <v-main>
+      <packages />
+    </v-main>
+    <v-footer
+      app
+      color="primary"
+      dark>
+      <base-footer />
+    </v-footer>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+import baseHeader from './components/base/base-header';
+import packages from './views/packages';
+import BaseFooter from './components/base/base-footer';
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+export default {
+  name: 'App',
+  components: { BaseFooter, packages, baseHeader },
+};
+</script>
