@@ -44,6 +44,7 @@ export default {
 
   computed: {
     ...mapGetters({ packages: 'getListPackage', total: 'total' }),
+
     pageCount: ({ total, limit }) => (total ? Math.ceil(total / limit) : 100),
   },
   watch: {
